@@ -1,0 +1,38 @@
+﻿@model List<Prueba14.Models.ViewModels.ListUsersViewModel> 
+@{
+    ViewBag.Title = "Usuarios Sumitemp";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div class="row" style="text-align:right; padding:10px;">
+    <a href="~/Users/New" class="btn btn-primary" >Nuevo</a>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table">
+            <tr>
+                <th>#</th>
+                <th>Apellido</th>
+                <th>Nombre</th>
+                <th>Correo Electrónico</th>
+                <th>Dirección</th>
+            </tr>
+            @foreach (var oElemento in Model)
+            {
+                <tr>
+                    <td> @oElemento.Id </td>
+                    <td> @oElemento.Apel </td>
+                    <td> @oElemento.Name </td>
+                    <td> @oElemento.Email </td>
+                    <td> @oElemento.Address </td>
+                    <td> @oElemento.Address </td>
+                    <td> @oElemento.Address </td>
+                    <td> <a class="btn btn-info" href="~/Users/Mod/@oElemento.Id">Editar</a> </td>
+                    <td> <a class="btn btn-danger" href="~/Users/Del/@oElemento.Id">Eliminar</a> </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

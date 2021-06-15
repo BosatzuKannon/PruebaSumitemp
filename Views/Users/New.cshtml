@@ -1,0 +1,45 @@
+﻿@model Prueba14.Models.ViewModels.UsersViewModel
+@{
+    ViewBag.Title = "Nuevo Usuario";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("New","Users",FormMethod.Post)){
+    <div class="row">
+        <div class="col-md-12">
+            <div>
+                @Html.LabelFor(d => d.Id)
+                @Html.TextBoxFor(d => d.Id, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Id, null, new { @class = "red" })
+            </div>
+            
+            <div>
+                @Html.LabelFor(d => d.Apel)
+                @Html.TextBoxFor(d => d.Apel, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Apel, null, new { @class = "red" })
+            </div>
+            
+            <div>
+                @Html.LabelFor(d => d.Name)
+                @Html.TextBoxFor(d => d.Name, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(d => d.Name, null, new { @class = "red" })
+            </div>
+            
+            <div>
+                @Html.LabelFor(d => d.Email)
+                @Html.TextBoxFor(d => d.Email, "", new { @class = "form-control" })
+            </div>
+            
+            <div>
+                @Html.LabelFor(d => d.Address)
+                @Html.TextBoxFor(d => d.Address, "", new { @class = "form-control" })
+            </div>
+            
+            <br />
+            <div style="text-align:right;">
+                <input class="btn btn-primary" type="submit" value="Guardar Usuario" />
+            </div>
+        </div>
+    </div>
+}
